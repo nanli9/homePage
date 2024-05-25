@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.personal-info {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: left;
+}
+.personal-info>div>img {
+    height: 200px;
+}
+.icon{
+    display: flex;
+    width: 30px;
+    height: 22.5px;
+}
+.icon>img{
+    width: 40px;
+    margin-left: -9px
+}
+.project-container{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: left;
+}
+.project-item-flex {
+    display: flex;
+}
+.project-item-flex >div{
+    margin-right: 20px;
+}
+.project-description {
+    display: flex;
+}
+.project-item > div{
+    margin-left: 20px;
+}
+.project-item > p{
+    margin-left: 20px;
+}
