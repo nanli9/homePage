@@ -2,212 +2,146 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Personal Page</title>
+    <title>Nan Li — Graphics & Simulation</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="personal-info">
-            <div class="personal-description">
-                <h2>Nan Li</h2>
-                <p>
-                    My name is Nan Li. Currently, I am a full time computer science <br>major grad student  in University
-                    of Southern California.
-                </p>
-                <p>
-                    I earned my Bachelor's degree in computer science from <br>Arizona State University in
-                    2023 fall.
+<header class="navbar">
+    <div class="logo">NL</div>
+    <nav>
+        <a href="#projects">Work</a>
+        <a href="#cv">CV</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nli62220@usc.edu" target="_blank">Email</a>
 
-                </p>
+    </nav>
+</header>
 
-                <a href="mailto:nli62220@usc.edu">Email(nli62220@usc.edu)</a>
-                <span> / </span>
-                <a href="https://github.com/nanli9">GitHub</a>
-            </div>
-            <div>
-                <img src="resource/NanLi.jpg">
-            </div>
-
+<section class="hero">
+    <div class="hero-content">
+        <h1>Hello, I’m Nan Li.<br><span>I build simulations and render worlds.</span></h1>
+        <p class="intro">
+            I’m a Computer Science graduate student at <strong>USC Viterbi</strong>, passionate about
+            physics-based animation, GPU simulation, and real-time rendering.
+            My projects explore how physics meets art — from deformable objects to fluid simulation.
+        </p>
+        <div class="hero-links">
+            <a href="mailto:nli62220@usc.edu">Email</a>
+            <a href="https://github.com/nanli9">GitHub</a>
         </div>
-
-        <div class="project-container">
-            <div>
-                <h2>Projects</h2>
-                <div>
-                    <h4>XPBD Deformable Object</h4>
-                    <p>Oct. 2024</p>
-                    <div class="icon">
-                        <img src="resource/GitHub-icon.png">
-                        <span>
-                            <a href="https://github.com/nanli9/Deformable_obj">code(Left)</a>
-                            <a href="https://github.com/nanli9/Cloth">code(Right)</a>
-
-                        </span>
-
-                    </div>
-
-                    <p>
-                        This project(on the left) uses XPBD(extensive position based dynamic to model the deformable object) to
-                        simulate  <br>the deformable objects and cloth. The TetGen library  is used to generate the
-                        tetrahedrons mesh given the  <br>surface mesh(in particular .obj file in
-                        this project). The constraints are edge length, volume and the collision with the ground.
-                    </p>
-                    <p>
-                        The cloth simulation on the right uses XPBD to simulate the internal forces like stretch and bend. Spatial
-                        hashing for particles <br> to particles is used to  detect the self collisions.
-
-                    </p>
-                    <div class="project-item-flex">
-                        <div>
-                            <video controls width="300">
-                                <source src="resource/XPBD.mp4" type="video/mp4"/>
-                            </video>
-                            <div>use XPBD to simulation the deformable <br>object with tetrahedrons mesh</div>
-                        </div>
-                        <div>
-                            <video controls width="300">
-                                <source src="resource/Cloth.mp4" type="video/mp4"/>
-                            </video>
-                            <div>use XPBD to simulation the cloth</div>
-
-                        </div>
-                    </div>
-
-                </div>
-                <div>
-                    <h4>Ray Tracer</h4>
-                    <p>Sept. 2024</p>
-                    <div class="icon">
-                        <img src="resource/GitHub-icon.png">
-                        <a href="https://github.com/nanli9/Ray_Tracer">code</a>
-                    </div>
-                    <p>
-                        A simple Ray Tracer check the intersection with triangle and sphere, using Phong shading model with
-                        antialiasing.
-                    </p>
-                    <img src="resource/SIGGRAPH_anti.jpg" width="300">
-                </div>
-                <div>
-                    <h4>Inverse Kinematic and Skinning</h4>
-                    <p>Apr. 2024</p>
-                    <div class="icon">
-                        <img src="resource/GitHub-icon.png">
-                        <a href="https://github.com/nanli9/IK">code</a>
-                    </div>
-                    <p>
-                        This project covers Forward kinematic, Inverse Kinematic and Skinning. Users can
-                        <br>move the position of the end effectors to animate the mesh. The program also
-                        <br> provides different algorithms in skinning and inverse kinematic.
-                    </p>
-
-                    <div class="project-item-flex">
-                        <div>
-                            <video controls width="300">
-                                <source src="resource/IK_SKINNING.mp4" type="video/mp4"/>
-                            </video>
-                            <div>comparison between linear blend <br> Skinning and dual quaternion</div>
-                        </div>
-                        <div>
-                            <video controls width="300">
-                                <source src="resource/IK_ALGORITHM.mp4" type="video/mp4"/>
-                            </video>
-                            <div>comparison between different IK algorithm</div>
-                        </div>
-
-                    </div>
-                </div>
-                <!--<div>
-                    <h4>Motion Capture</h4>
-                    <div class="icon">
-                        <img src="resource/GitHub-icon.png">
-                        <a href="https://github.com/nanli9/mocapPlayer">code</a>
-                    </div>
-                </div>-->
-                <div>
-                    <h4>2D Object Deformation</h4>
-                    <div class="icon">
-                        <img src="resource/GitHub-icon.png">
-                        <a href="https://github.com/nanli9/Simulator2D">code</a>
-                    </div>
-                    <p>
-                        This project focuses on FEM(finite element method) 2D deformable object simulation.
-                        <br>There are three different algorithms: mass spring system. linear FEM, and
-                        <br> Co rotational System. The following videos demonstrate their difference.
-                    </p>
-
-                    <div class="project-item-flex">
-                        <div>
-                            <video controls width="300">
-                                <source src="resource/Simulator2D-LFEM.mp4" type="video/mp4"/>
-                            </video>
-                            <div>Linear FEM</div>
-                        </div>
-                        <div>
-                            <video controls width="300">
-                                <source src="resource/Simulator2D-CLFEM.mp4" type="video/mp4"/>
-                            </video>
-                            <div>Co rotational FEM</div>
-                        </div>
-                        <div>
-                            <video controls width="300">
-                                <source src="resource/Simulator2D-MS.mp4" type="video/mp4"/>
-                            </video>
-                            <div>Mass Spring FEM</div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h4>Jell-O</h4>
-                    <div class="project-description">
-                        <video controls width="300">
-                            <source src="resource/Jello-cube.mp4" type="video/mp4"/>
-                        </video>
-                        <div class="project-item">
-                            <p>Feb. 2024</p>
-                            <div class="icon">
-                                <img src="resource/GitHub-icon.png">
-                                <a href="https://github.com/nanli9/starter-csci520-assign1">code</a>
-                            </div>
-                            <p>
-                                Jell-O is a physics based simulation of a deformable object which
-                                <br>consists of 512 vertices and connected with structure, shear, and
-                                <br>bend springs. The cube is placed inside a box where the collisions
-                                <br> are handled by penalty method.
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h4>Prime Engine Game Demo</h4>
-                    <div class="project-item-flex">
-                        <video controls width="300">
-                            <source src="resource/milestone3.mp4" type="video/mp4"/>
-                        </video>
-                        <div class="project-item">
-                            <p>Apr. 2024</p>
-                            <p>
-                                <a href="https://sites.google.com/site/artemscode/primeengine/documentation">Prime Engine</a> is a low-level game engine made by <a href="https://viterbi.usc.edu/directory/faculty/Kovalovs/Artjoms">Artjoms Kovalovs,</a>
-                                <br>in which I explored a lot of concepts about game production,
-                                <br>including physics, skeleton animation and basic visual effect. This
-                                <br> simple game demo includes basic particle system rendering,
-                                <br>physics collision detection and animation system.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <p>
-                Feel free to email me if you want to chat.
-            </p>
-
-        </div>
-
     </div>
+</section>
 
+<main id="projects" class="projects">
+    <h2>Project Showcase</h2>
+
+    <!-- TAB CONTAINER -->
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-btn" data-target="ik">IK & Skinning</button>
+            <button class="tab-btn" data-target="fem">2D FEM</button>
+            <button class="tab-btn" data-target="jello">Jell-O</button>
+            <button class="tab-btn active" data-target="xpbd">XPBD</button>
+            <button class="tab-btn" data-target="ray">Ray Tracer</button>
+            <button class="tab-btn" data-target="prime">Prime Engine</button>
+        </div>
+
+        <div class="tab-content" id="ik">
+            <h3 class="project-title">
+                <a href="https://github.com/nanli9/IK" target="_blank">
+                    Inverse Kinematic & Skinning <span class="link-icon">↗</span>
+                </a>
+            </h3>
+            <p>Comparing algorithms and skinning techniques.</p>
+            <div class="media-row">
+                <video controls src="resource/IK_SKINNING.mp4"></video>
+                <video controls src="resource/IK_ALGORITHM.mp4"></video>
+            </div>
+        </div>
+
+        <div class="tab-content" id="jello">
+            <h3 class="project-title">
+                <a href="https://github.com/nanli9/starter-csci520-assign1">
+                    Jell-O Simulation <span class="link-icon">↗</span>
+                </a>
+            </h3>
+            <p>Spring-mass cube simulation with collision using penalty method.</p>
+            <video controls src="resource/Jello-cube.mp4"></video>
+        </div>
+
+        <div class="tab-content active" id="xpbd">
+            <h3 class="project-title">
+                XPBD Deformable
+                <a href="https://github.com/nanli9/Deformable_obj">Object<span class="link-icon">↗</span></a>
+                & <a href="https://github.com/nanli9/Cloth">Cloth <span class="link-icon">↗</span></a>
+            </h3>
+            <p>Simulations using Extended Position-Based Dynamics for volumetric and cloth deformation.</p>
+            <div class="media-row">
+                <video controls src="resource/XPBD.mp4"></video>
+                <video controls src="resource/Cloth.mp4"></video>
+            </div>
+        </div>
+
+        <div class="tab-content" id="fem">
+            <h3 class="project-title">
+                <a href="https://github.com/nanli9/Simulator2D">
+                    2D Object Deformation <span class="link-icon">↗</span>
+                </a>
+            </h3>
+
+            <p>Finite Element simulations — Linear, Co-Rotational, and Mass-Spring models.</p>
+            <div class="media-row">
+                <video controls src="resource/Simulator2D-LFEM.mp4"></video>
+                <video controls src="resource/Simulator2D-CLFEM.mp4"></video>
+                <video controls src="resource/Simulator2D-MS.mp4"></video>
+            </div>
+        </div>
+
+        <div class="tab-content" id="ray">
+            <h3 class="project-title">
+                <a href="https://github.com/nanli9/Ray_Tracer">
+                    Ray Tracer<span class="link-icon">↗</span>
+                </a>
+            </h3>
+            <p>Simple ray tracer with Phong shading and antialiasing.</p>
+            <img src="resource/SIGGRAPH_anti.jpg" width="300">
+        </div>
+
+
+
+        <div class="tab-content" id="prime">
+            <h3>Prime Engine Game Demo</h3>
+            <p>Exploration of physics, animation, and particle effects inside Prime Engine.</p>
+            <video controls src="resource/milestone3.mp4"></video>
+        </div>
+    </div>
+</main>
+
+<section class="cv-section" id="cv">
+    <h2>Curriculum Vitae</h2>
+    <p>You can preview or download my latest CV below:</p>
+
+    <div class="cv-buttons">
+        <a href="resource/Resume.pdf" target="_blank" class="cv-btn preview">📄 Preview CV</a>
+        <a href="resource/Resume.pdf" download class="cv-btn download">⬇️ Download CV</a>
+    </div>
+</section>
+
+<footer>
+    <p>Let’s connect — I love talking about graphics, physics, and haptics.</p>
+</footer>
+
+<script>
+    const buttons = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById(btn.dataset.target).classList.add('active');
+        });
+    });
+</script>
 </body>
 </html>

@@ -1,52 +1,289 @@
 body {
     margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg, #ff8a00, #e52e71, #6a11cb);
+    background-size: 300% 300%;
+    animation: gradientMove 15s ease infinite;
 }
-.container {
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+}
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 500;
+}
+.navbar a:hover { opacity: 0.7; }
+
+/* Hero */
+.hero {
+    min-height: 80vh;               /* was 90vh — slightly shorter */
     display: flex;
     align-items: center;
-    flex-direction: column;
-    background: bisque;
+    justify-content: center;
+    padding: 6rem 2rem 2rem;        /* reduced bottom padding */
+    text-align: left;
+    background: transparent;  /* share page background */
+    backdrop-filter: none;    /* remove frosted effect if any */
+    padding-bottom: 1rem;
 }
-.personal-description
-{
-    margin-right: 20px;
+.hero-content {
+    max-width: 800px;
 }
-.personal-info {
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+.hero h1 span {
+    color: #ffe9ec;
+}
+.intro {
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 650px;
+}
+.hero-links a {
+    display: inline-block;
+    margin-top: 1.5rem;
+    margin-right: 1rem;
+    border: 1px solid #fff;
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+.hero-links a:hover {
+    background: #fff;
+    color: #111;
+}
+
+/* Projects */
+
+.projects {
+    padding: 5rem 3rem;
+    text-align: center;
+    backdrop-filter: blur(40px);
+    margin-top: 0;
+    padding-top: 2rem;
+}
+.projects h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Tabs */
+.tab-container {
+    max-width: 950px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+.tab-buttons {
     display: flex;
-    width: 50%;
-    align-items: center;
-    justify-content: left;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
 }
-.personal-info>div>img {
-    height: 200px;
+.tab-btn {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-.icon{
+.tab-btn.active, .tab-btn:hover {
+    background: #fff;
+    color: #000;
+}
+.tab-content {
+    display: none;
+    animation: fadeIn 0.7s ease;
+}
+.tab-content.active {
+    display: block;
+}
+.media-row {
     display: flex;
-    width: 30px;
-    height: 22.5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
 }
-.icon>img{
-    width: 40px;
-    margin-left: -9px
+video, img {
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
-.project-container{
+a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Stylish code link buttons */
+.tab-content a[href*="github"],
+.tab-content a[href*="Prime"],
+.tab-content a[href*="Doc"],
+.tab-content a[href*="code"] {
+    display: inline-block;
+    margin: 1rem 0.5rem 0;
+    padding: 0.45rem 1.2rem;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+.tab-content a[href*="github"]:hover,
+.tab-content a[href*="Prime"]:hover,
+.tab-content a[href*="Doc"]:hover,
+.tab-content a[href*="code"]:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+/* Code bar: puts the code button(s) on their own line above media */
+.codebar{
+    width: 100%;
+    text-align: center;
+    margin: 0.5rem 0 0.6rem; /* space before the video */
+}
+
+/* keep your nice pill styling for these buttons */
+.codebar a{
+    display: inline-block;
+    padding: 0.45rem 1.2rem;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+.codebar a:hover{
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+/* Force heading links to look like plain text, not buttons */
+h3.project-title > a {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: inherit !important;
+    font: inherit !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    display: inline !important;
+    cursor: pointer;
+}
+
+h3.project-title > a:hover {
+    text-decoration: underline !important;
+    color: #ffe9ec !important; /* or your highlight color */
+}
+
+/* === CV Section === */
+.cv-section {
+    text-align: center;
+    padding: 4rem 2rem 5rem;
+    background: transparent; /* share gradient with rest of page */
+    color: #fff;
+}
+
+.cv-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.cv-section p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.cv-buttons {
     display: flex;
-    width: 50%;
-    align-items: center;
-    justify-content: left;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
-.project-item-flex {
-    display: flex;
+
+.cv-btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 40px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
-.project-item-flex >div{
-    margin-right: 20px;
+
+.cv-btn.preview {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid #fff;
+    color: #fff;
 }
-.project-description {
-    display: flex;
+
+.cv-btn.preview:hover {
+    background: rgba(255,255,255,0.35);
 }
-.project-item > div{
-    margin-left: 20px;
+
+.cv-btn.download {
+    background: #fff;
+    color: #000;
+    border: 1px solid #fff;
 }
-.project-item > p{
-    margin-left: 20px;
+
+.cv-btn.download:hover {
+    background: #ffe9ec;
+    color: #111;
 }
